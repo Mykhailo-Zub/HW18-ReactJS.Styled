@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 450px;
+    height: 500px;
+    padding: 50px 25px 30px 25px;
+}
+
+.sign_in_btn {
+    width: 100%;
+}
+
+.link_row {
+    width: 100%;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

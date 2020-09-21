@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 450px;
+    height: 600px;
+    padding: 50px 25px 30px 25px;
+}
+
+.sign_up_btn {
+    width: 100%;
+}
+
+.link_row {
+    margin-top: -20px;
+    margin-left: auto;
+}
+
+.name_row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

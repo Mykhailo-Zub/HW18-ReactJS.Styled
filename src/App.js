@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+    HashRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./App.css";
+import PrivateRoute from "./components/PrivateRoute";
+
+import SignIn from "./modules/SignIn/SignIn";
+import SignUp from "./modules/SignUp/SignUp";
+
+const App = () => {
+    return (
+        <div className="App">
+            <Router>
+                <Switch>
+                    <Route exact path="/signin">
+                        <SignIn />
+                    </Route>
+                    <Route exact path="/signup">
+                        <SignUp />
+                    </Route>
+                    <Route exact path="/forgot">
+                        <h3>
+                            If you forgot your password, please write it next
+                            time. Now you must sign up one more time.
+                        </h3>
+                        <Link to="/signup">Sign up</Link>
+                    </Route>
+                    <PrivateRoute exact path="/main" />
+
+                    <Route
+                        path="/"
+                        exact
+                        render={() => <Redirect to="/main" />}
+                    ></Route>
+                </Switch>
+            </Router>
+        </div>
+    );
+};
 
 export default App;
